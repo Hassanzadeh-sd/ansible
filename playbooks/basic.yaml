@@ -1,0 +1,7 @@
+---
+
+- hosts: all
+  tasks:
+  - name: This is basic connectivity testing
+    ping:
+...

@@ -1,0 +1,11 @@
+---
+
+- hosts: dev
+  tasks:
+    - name: this is shell test
+      shell: touch test.txt
+      args:
+        chdir: ~/Downloads
+        creates: test.txt
+
+...

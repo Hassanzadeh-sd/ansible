@@ -1,0 +1,12 @@
+[dev]
+dev.lab.com
+
+
+[prod]
+prod.lab.com
+
+
+[all]
+dev.lab.com
+prod.lab.com
+master.lab.com

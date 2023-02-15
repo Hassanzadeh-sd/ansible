@@ -1,0 +1,12 @@
+---
+
+- hosts: dev
+  tasks:
+  - name: use argv to send command as a list
+    command: touch "{{  test_file }}"
+    args:
+      chdir: "{{ test_dir  }}"
+      creates: "{{ test_file }}"
+  - name: show the value of output
+    debug: var=output
+...

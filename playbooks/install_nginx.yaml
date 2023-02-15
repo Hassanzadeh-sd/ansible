@@ -1,0 +1,11 @@
+---
+
+- hosts: dev
+  become: yes
+  tasks:
+  - name: this will install nginx on remote
+    apt: 
+      name : nginx
+      state: latest
+
+...
