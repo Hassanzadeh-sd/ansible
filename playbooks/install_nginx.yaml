@@ -7,5 +7,11 @@
     apt: 
       name : nginx
       state: latest
+      
+  - name: enable nginx on boot
+    ansible.builtin.service:
+      name: nginx
+      enabled: true
+      state: started
 
 ...
