@@ -4,12 +4,14 @@
   become: yes
   tasks:
       - name: Install aptitude
+        when: ansible_distribution == "Ubuntu"
         apt:
           name: aptitude
           state: latest
-          #update_cache: true
+          update_cache: true
 
       - name: Install required system packages
+        when: ansible_distribution == "Ubuntu"
         apt:
           pkg:
             - apt-transport-https
@@ -23,21 +25,25 @@
           update_cache: true
 
       - name: Add Docker GPG apt Key
+        when: ansible_distribution == "Ubuntu"
         apt_key:
           url: https://download.docker.com/linux/ubuntu/gpg
           state: present
 
       - name: Add Docker Repository
+        when: ansible_distribution == "Ubuntu"
         apt_repository:
           repo: deb https://download.docker.com/linux/ubuntu focal stable
           state: present
 
       - name: Update apt and install docker-ce
+        when: ansible_distribution == "Ubuntu"
         apt:
           name: docker-ce
           state: latest
           update_cache: true
 
       - name: Install Docker Module for Python
+        when: ansible_distribution == "Ubuntu"
         pip:
           name: docker

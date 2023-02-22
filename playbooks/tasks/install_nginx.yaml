@@ -4,11 +4,13 @@
   become: yes
   tasks:
   - name: this will install nginx on remote
+    when: ansible_distribution == "Ubuntu"
     apt: 
       name : nginx
       state: latest
       
   - name: enable nginx on boot
+    when: ansible_distribution == "Ubuntu"
     ansible.builtin.service:
       name: nginx
       enabled: true

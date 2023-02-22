@@ -1,0 +1,12 @@
+---
+
+- hosts: dev
+  become: yes
+  tasks:
+  - name: this will install vim on remote
+    when: ansible_distribution == "Ubuntu"
+    apt: 
+      name : vim
+      state: latest
+
+...

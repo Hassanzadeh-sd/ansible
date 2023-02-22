@@ -1,0 +1,6 @@
+---
+
+- import_playbook: "ubuntu/install_vim.yaml"
+  
+
+...
