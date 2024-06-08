@@ -1,0 +1,11 @@
+---
+- name: Docker Platform
+  hosts: "{{ host | default('all') }}"
+  become: yes
+  vars:
+    docker_compose_version: v2.23.3
+  tasks:
+    #- import_tasks: disable-iptable.yml
+    - import_tasks: ../dns/403.yml
+    - import_tasks: docker.yml
+    - import_tasks: docker-compose.yml
